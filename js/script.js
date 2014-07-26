@@ -1,16 +1,18 @@
-var triangle = function (side1, side2, side3) {
+function triangle  (side1, side2, side3)
+{
+    if( (side1 == side2) && (side2 == side3) )
+      {
+       return "equilateral";
+       }
+     else if( (side1 == side2) || (side2 == side3) || (side3 == side1) )
+      {
+       return "isosceles";
+       }
+     else 
+      {
+       return "scalene";
+       }
 
-    if ((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2)) { //check if it is a triangle
-        if ((side1 == side2) && (side2 == side3) && (side1 == side3)) {
-            return "equilateral";
-        } else if ((side1 == side2) || (side2 == side3) || (side1 == side3)) {
-            return "isosceles";
-        } else { 
-            return "scalene";
-        }
-    } else { 
-        return "not a triangle";
-    }
 }
 
 $(document).ready(function () {
@@ -27,7 +29,7 @@ $(document).ready(function () {
 
         $("#result").show();
         $(".tri").text(result);
-        $("input#side1").val("ikbov");
+        $("input#side1").val("");
         $("input#side2").val("");
         $("input#side3").val("");
 
